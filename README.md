@@ -11,7 +11,7 @@ NOTE: `/proc/locks` is a feature in linux kernel so this utility must be run on 
 
 Run the main program that list locks as following:
 ```python
-./py-lslock.py /tmp/lslock-test
+python py-lslock.py /tmp/lslock-test
 ```
 
 Here `/tmp/lslock-test` is given as argument where `.lock` files are checked.
@@ -21,14 +21,14 @@ Here `/tmp/lslock-test` is given as argument where `.lock` files are checked.
 
 To test, the test program must be run in separate shell.
 Run as :
-```
+```python
 python py-lslock-test.py /tmp/lslock-test 15
 ```
 here 15 is number of iterations, i.e. # of lock operations performed in given subdirectory.  
 In other terminal run the main `py-lslock.py` to check the locked files in same directory.
 
 ```python
-./py-lslock.py /tmp/lslock-test
+python py-lslock.py /tmp/lslock-test
 ```
 
 ###Sample output
