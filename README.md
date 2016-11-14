@@ -30,3 +30,22 @@ In other terminal run the main `py-lslock.py` to check the locked files in same 
 ```python
 ./py-lslock.py /tmp/lslock-test
 ```
+
+###Sample output
+
+```
+root@imran-ThinkPad-W530:/home/imran/Desktop/py-lslock# python py-lslock.py /tmp/lslock
+result of all locked files found in directory /tmp/lslock 
+LOCKED_FILE
+/tmp/lslock/0.lock
+/tmp/lslock/1.lock
+/tmp/lslock/2.lock
+/tmp/lslock/3.lock
+/tmp/lslock/4.lock
+/tmp/lslock/5.lock
+/tmp/lslock/6.lock
+/tmp/lslock/7.lock
+/tmp/lslock/8.lock
+/tmp/lslock/9.lock
+/tmp/lslock/10.lock
+```

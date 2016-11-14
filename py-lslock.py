@@ -33,12 +33,12 @@ class LsLock(object):
                 pid = data[4]
                 inode = int(data[5].split(':')[-1])
                 if inode in self.info:
-                    self.metadata[inode].update({'pid': pid})
+                    self.info[inode].update({'pid': pid})
 
     def __repr__(self):
         result = []
         for i, v in self.info.iteritems():
-            result.append('{p}\t{f}'.format(p=v.get('pid'), f=v.get('file')))
+            result.append('{f}'.format(f=v.get('file')))
         return '\n'.join(result)
 
 
@@ -46,12 +46,13 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print ("ERROR Running program")
         sys.exit("Usage: py-lslock <directory>")
-    if platform.system() != 'linux' or platform.system() != 'linux2':
+    if platform.system().lower() not in ['linux','linux2']:
         print("System is not Linux, therefore /proc/locks doesnt exist")
         print ("Exiting ...")
         sys.exit(1)
 
     directory = sys.argv[1]
     inst = LsLock(directory)
-    print ("result of all locked files found in directory %s" %directory)
+    print ("result of all locked files found in directory %s " %directory)
+    print("LOCKED_FILE")
     print(inst)

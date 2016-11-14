@@ -9,9 +9,8 @@ if len(sys.argv) < 3:
 	sys.exit("Usage: ./test-py-lslock <directory> <iterations>")
 directory = sys.argv[1]
 iterations = sys.argv[2]
-try:
-    os.makedirs(dirname)
-except: pass
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 for i in range(int(iterations)):
     filename = '%s/%s.lock' % (directory, i)
